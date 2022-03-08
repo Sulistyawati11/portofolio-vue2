@@ -1,0 +1,12 @@
+pages:
+  image: node:lts
+  stage: deploy
+  script:
+    - yarn install --progress=false
+    - yarn build
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist
+  only:
+    - main
